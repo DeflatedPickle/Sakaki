@@ -1,0 +1,55 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.3.72'
+    id 'org.openjfx.javafxplugin' version '0.0.8'
+    id 'com.diffplug.gradle.spotless' version '3.27.0'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+
+    // App directories
+    implementation 'net.harawata:appdirs:1.1.0'
+
+    // Layout file
+    implementation 'com.electronwill.night-config:toml:3.6.3'
+
+    // Keyboard and mouse access
+    // implementation 'com.1stleg:jnativehook:2.1.0'
+
+    // Auto-updating
+    // implementation 'org.update4j:update4j:1.4.5'
+
+    // Widgets
+    implementation 'org.controlsfx:controlsfx:11.0.1'
+    implementation 'com.jfoenix:jfoenix:9.0.8'
+
+    // Styles
+    implementation 'org.jfxtras:jmetro:11.6.10'
+
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+
+javafx {
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
+}
+
+spotless {
+    kotlin {
+        ktlint()
+
+        licenseHeader '/* Copyright (c) $YEAR DeflatedPickle under the MIT license */\n\n'
+    }
+}

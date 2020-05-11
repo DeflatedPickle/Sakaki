@@ -1,0 +1,8 @@
+[time]
+x = 0
+y = 0
+width = 60
+height = 40
+    [[time.widgets]]
+    type = "com.deflatedpickle.sakaki.widget.TimeDateLabel"
+    format = "HH:mm:ss"
