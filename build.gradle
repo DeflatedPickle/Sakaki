@@ -21,7 +21,7 @@ dependencies {
     implementation 'com.electronwill.night-config:toml:3.6.3'
 
     // Keyboard and mouse access
-    // implementation 'com.1stleg:jnativehook:2.1.0'
+    implementation 'com.1stleg:jnativehook:2.1.0'
 
     // Auto-updating
     // implementation 'org.update4j:update4j:1.4.5'

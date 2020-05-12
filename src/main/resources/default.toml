@@ -6,6 +6,8 @@ height = 40
 style = "/default.css"
 slide-from = "NORTH"
 slide-time = 0.8
+toggle-modifier = "Ctrl"
+toggle-key = "T"
     [[time.widgets]]
     type = "com.deflatedpickle.sakaki.widget.TimeDateLabel"
     format = "HH:mm:ss"

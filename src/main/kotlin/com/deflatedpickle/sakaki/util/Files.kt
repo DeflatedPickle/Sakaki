@@ -1,6 +1,6 @@
 /* Copyright (c) 2020 DeflatedPickle under the MIT license */
 
-package com.deflatedpickle.sakaki
+package com.deflatedpickle.sakaki.util
 
 import com.electronwill.nightconfig.core.file.FileConfig
 import java.io.File
@@ -21,9 +21,9 @@ object Files {
         .build()
 
     init {
-        this.appDir.mkdirs()
+        appDir.mkdirs()
         println(appDir)
-        this.configFile.createNewFile()
+        configFile.createNewFile()
 
         config.load()
         println(config)
