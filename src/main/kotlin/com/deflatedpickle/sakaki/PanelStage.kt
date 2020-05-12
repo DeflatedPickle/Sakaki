@@ -8,8 +8,8 @@ import javafx.animation.KeyValue
 import javafx.animation.Timeline
 import javafx.beans.property.SimpleBooleanProperty
 import javafx.beans.property.SimpleDoubleProperty
-import javafx.scene.Group
 import javafx.scene.Scene
+import javafx.scene.layout.Pane
 import javafx.stage.Stage
 import javafx.stage.StageStyle
 import javafx.util.Duration
@@ -22,7 +22,7 @@ class PanelStage(
     x: Double, y: Double,
     width: Double, height: Double
 ) : Stage(StageStyle.UNDECORATED) {
-    val group = Group()
+    val pane = Pane()
 
     val outProperty = SimpleBooleanProperty(false)
 
@@ -71,6 +71,9 @@ class PanelStage(
     )
 
     init {
+        this.pane.styleClass.clear()
+        this.pane.styleClass.add("panel")
+
         this.title = text
 
         this.x = x
@@ -83,11 +86,15 @@ class PanelStage(
             Side.WEST -> this.x += width
         }
 
-        this.scene = Scene(group, width, height).apply {
+        this.scene = Scene(pane, width, height).apply {
             if (style.startsWith("file:")) {
                 stylesheets.add(style)
+                this@PanelStage.pane.stylesheets.add(style)
             } else {
-                stylesheets.add(this::class.java.getResource(style).toExternalForm())
+                with(this::class.java.getResource(style).toExternalForm()) {
+                    stylesheets.add(this)
+                    this@PanelStage.pane.stylesheets.add(this)
+                }
             }
         }
         this.isAlwaysOnTop = true

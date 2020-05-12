@@ -1,4 +1,10 @@
+.panel {
+    -fx-background-color: #232b2b;
+}
+
 .time-date-label {
+    -fx-text-fill: #c4d8de;
+
     -fx-font-size: 25;
     -fx-text-alignment: 'center';
 }

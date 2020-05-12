@@ -62,7 +62,7 @@ class PanelController : Application() {
                     if (widgets is ArrayList<Any>) {
                         for (i in widgets) {
                             if (i is CommentedConfig) {
-                                group.children.add(
+                                pane.children.add(
                                     // Get the class by it's package and name
                                     Class.forName(i.get("type"))
                                         // Get a constructor matching the argument types, dropping the type

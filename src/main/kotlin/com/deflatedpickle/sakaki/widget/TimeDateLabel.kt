@@ -16,10 +16,10 @@ class TimeDateLabel(format: String = "HH:mm:ss") : Label() {
     val formatter = DateTimeFormatter.ofPattern(format)
 
     init {
-        this.text = formatter.format(LocalDateTime.now())
-
         this.styleClass.clear()
         this.styleClass.add("time-date-label")
+
+        this.text = formatter.format(LocalDateTime.now())
 
         Timeline(
             KeyFrame(
