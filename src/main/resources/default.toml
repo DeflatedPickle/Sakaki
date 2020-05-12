@@ -1,6 +1,6 @@
 [time]
-x = 0
-y = 0
+x = "CENTRE"
+y = 0.0
 width = 95
 height = 40
 style = "/default.css"
@@ -11,3 +11,14 @@ toggle-key = "T"
     [[time.widgets]]
     type = "com.deflatedpickle.sakaki.widget.TimeDateLabel"
     format = "HH:mm:ss"
+
+[other]
+x = 0.0
+y = "CENTRE"
+width = 95
+height = 40
+style = "/default.css"
+slide-from = "EAST"
+slide-time = 0.8
+toggle-modifier = "Ctrl"
+toggle-key = "O"

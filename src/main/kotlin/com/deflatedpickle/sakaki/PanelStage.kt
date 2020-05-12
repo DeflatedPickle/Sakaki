@@ -77,10 +77,10 @@ class PanelStage(
         this.y = y
 
         when (slideFrom) {
-            Side.NORTH -> this.y - height
-            Side.EAST -> this.x - width
-            Side.SOUTH -> this.y + height
-            Side.WEST -> this.x + width
+            Side.NORTH -> this.y -= height
+            Side.EAST -> this.x -= width
+            Side.SOUTH -> this.y += height
+            Side.WEST -> this.x += width
         }
 
         this.scene = Scene(group, width, height).apply {

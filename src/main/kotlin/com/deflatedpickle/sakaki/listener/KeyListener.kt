@@ -12,7 +12,6 @@ object KeyListener : NativeKeyListener {
         for (panelStage in PanelController.panelList) {
             if (panelStage.toggleModifier == NativeKeyEvent.getModifiersText(p0.modifiers)) {
                 if (panelStage.toggleKey == NativeKeyEvent.getKeyText(p0.keyCode)) {
-                    println(panelStage.outProperty.value)
                     if (panelStage.outProperty.value) {
                         panelStage.hideTimeline.play()
                     } else {
