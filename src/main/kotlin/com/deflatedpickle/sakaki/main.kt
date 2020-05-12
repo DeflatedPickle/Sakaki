@@ -5,6 +5,6 @@ package com.deflatedpickle.sakaki
 import javafx.application.Application
 
 fun main() {
-    Config
+    Files
     Application.launch(PanelController::class.java)
 }

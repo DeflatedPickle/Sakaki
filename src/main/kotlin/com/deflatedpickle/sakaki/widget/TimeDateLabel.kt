@@ -12,16 +12,19 @@ import javafx.event.EventHandler
 import javafx.scene.control.Label
 import javafx.util.Duration
 
-class TimeDateLabel(format: String = "HH:mm:ss", size: Int = 10) : Label() {
+class TimeDateLabel(format: String = "HH:mm:ss") : Label() {
     val formatter = DateTimeFormatter.ofPattern(format)
 
     init {
         this.text = formatter.format(LocalDateTime.now())
 
+        this.styleClass.clear()
+        this.styleClass.add("time-date-label")
+
         Timeline(
             KeyFrame(
                 Duration.millis(1000.0),
-                EventHandler { event: ActionEvent? ->
+                EventHandler { event: ActionEvent ->
                     this@TimeDateLabel.text = formatter.format(LocalDateTime.now())
                 }
             )

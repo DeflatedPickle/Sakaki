@@ -6,7 +6,7 @@ import com.electronwill.nightconfig.core.file.FileConfig
 import java.io.File
 import net.harawata.appdirs.AppDirsFactory
 
-object Config {
+object Files {
     val appDir = File(
         AppDirsFactory.getInstance().getUserConfigDir(
         "Sakaki", null, "DeflatedPickle", true
