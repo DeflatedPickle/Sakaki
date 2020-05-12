@@ -2,6 +2,7 @@
 
 package com.deflatedpickle.sakaki
 
+import com.deflatedpickle.sakaki.util.Side
 import com.electronwill.nightconfig.core.CommentedConfig
 import javafx.application.Application
 import javafx.scene.Node
@@ -16,6 +17,8 @@ class PanelController : Application() {
                         // Uses the block key as the name
                         key.capitalize(),
                         value.get("style"),
+                        Side.valueOf(value.getOrElse("slide-from", "NORTH")),
+                        value.getOrElse("slide-time", 1.0),
                         value.get("x"),
                         value.get("y"),
                         value.get("width"),

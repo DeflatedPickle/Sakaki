@@ -4,6 +4,8 @@ y = 0
 width = 95
 height = 40
 style = "/default.css"
+slide-from = "NORTH"
+slide-time = 0.8
     [[time.widgets]]
     type = "com.deflatedpickle.sakaki.widget.TimeDateLabel"
     format = "HH:mm:ss"
